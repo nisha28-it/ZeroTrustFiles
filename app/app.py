@@ -223,7 +223,9 @@ def download_file(file_id):
         as_attachment=True,
         download_name=filename
     )
-
+@app.route('/')
+def home():
+    return "<h1>Zero Trust File Sharing System</h1><p>System is active. Please go to <a href='/login'>/login</a> to sign in.</p>"
 @app.route('/health')
 def health():
     return jsonify({"status": "ok"})
